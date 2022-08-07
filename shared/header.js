@@ -9,7 +9,7 @@ export default function Header({ navigation, title = "Hotels Reviews App" }) {
     }
 
     return (
-        <SafeAreaView style={styles.safeArea}>
+        <View style={styles.safeArea}>
             <ImageBackground source={require('../assets/wp7837608.jpg')} style={styles.header}>
                 <MaterialIcons name="menu" size={28} style={styles.icon} onPress={openMenu} />
                 <View style={styles.headerTitle}>
@@ -17,7 +17,7 @@ export default function Header({ navigation, title = "Hotels Reviews App" }) {
                     <Text style={styles.headerText}>{title}</Text>
                 </View>
             </ImageBackground>
-        </SafeAreaView>
+        </View>
     );
 }
 
