@@ -7,15 +7,7 @@ import About from '../screens/about'
 const Stack = createStackNavigator();
 export default function AboutStack() {
     return (
-        <Stack.Navigator
-            initialRouteName="About"
-            screenOptions={{
-                headerTintColor: '#333',
-                headerTitleStyle: {
-                    fontWeight: 'bold'
-                }
-            }}
-        >
+        <Stack.Navigator initialRouteName="About">
             <Stack.Screen
                 name="About"
                 component={About}
