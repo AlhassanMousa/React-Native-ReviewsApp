@@ -5,7 +5,7 @@ import Home from '../screens/home'
 import ReviewDetails from '../screens/reviewDetails'
 import Header from '../shared/header'
 
-const Stack = createStackNavigator();  //function that used to create a new StackNavigator 
+const Stack = createStackNavigator();   
 export default function HomeStack() {
     return (
         <Stack.Navigator
@@ -42,4 +42,3 @@ export default function HomeStack() {
 
 
 
-//stack.Screen every screen automatically get navigation property on props assigned to it
