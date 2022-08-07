@@ -16,7 +16,6 @@ export default function ReviewDetails({ navigation, route, }) {
                     <Image source={ ratingImages[rating]} />
                 </View>
             </Card>
-            {/* You shouldn't be passing callbacks through navigation, instead, pass objects through navigation & update state accordingly (in case you're not using any state management library) */}
             <FlatButton text="Delete Review" onPress={() => navigation.navigate('Home', { reviewToDelete: { key, title } })} />
         </View>
     )
@@ -34,6 +33,3 @@ const styles = StyleSheet.create({
 })
 
 
-
-//<Image source={ [rating]} /> we hard coded images in globalStyles and reference it iside image component to dynamically show correct images
-//navigation.getParam is not a function  we use route in navigation 6
