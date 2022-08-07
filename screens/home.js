@@ -8,7 +8,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import ReviewForm from './reviewForm';
 
 export default function Home({ navigation, route }) {
-    const ICON_SIZE = 28;
     const [modalOpen, setModalOpen] = useState(false);
 
     const [reviews, setReviews] = useState([
@@ -51,7 +50,7 @@ export default function Home({ navigation, route }) {
                     <SafeAreaView style={styles.modalContent}>
                         <MaterialIcons
                             name="close"
-                            size={ICON_SIZE}
+                            size='28'
                             style={{ ...styles.modalToggle, ...styles.modalClose }}
                             onPress={() => (setModalOpen(false))}
                         />
