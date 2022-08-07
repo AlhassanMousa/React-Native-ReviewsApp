@@ -7,7 +7,7 @@ import { globalStyles } from '../styles/global'
 export default function About() {
     return (
         <View style={globalStyles.container}>
-            <Text style={globalStyles.titleText}>Project created watching {'\n'}The Net Ninja React Native Series.</Text>
+            <Text style={globalStyles.titleText}>Project created by {'\n'}The Net Ninja React Native.</Text>
             <Text
                 style={styles.linkText}
                 onPress={() => Linking.openURL('https://www.youtube.com/playlist?list=PL4cUxeGkcC9ixPU-QkScoRBVxtPPzVjrQ')}>Press here to open the series.</Text>
