@@ -14,9 +14,7 @@ export default function App() {
     return   <AppLoading onError={console.warn} />
   }
   return (
-    <SafeAreaProvider>
       <Navigator />
-    </SafeAreaProvider>
   );
 }
 
