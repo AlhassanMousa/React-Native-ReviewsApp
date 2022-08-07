@@ -3,7 +3,7 @@ import { View, Text, TextInput } from 'react-native'
 import { Formik } from 'formik'
 import { globalStyles } from '../styles/global'
 import FlatButton from '../shared/button'
-import * as yup from 'yup'   //help create validationSchema
+import * as yup from 'yup'   
 
 export default function ReviewForm({ addReview }) {
 
@@ -20,7 +20,7 @@ export default function ReviewForm({ addReview }) {
             rating: yup
                 .string()
                 .required()
-                .test('is num 1-5', 'Rating must be a number between 1 - 5',  //test allow us to create a function , take three parameters : name, string or feedback message, function
+                .test('is num 1-5', 'Rating must be a number between 1 - 5',  
                     (val) => {
                         return parseInt(val) < 6 && parseInt(val) > 0
                     })
@@ -34,28 +34,25 @@ export default function ReviewForm({ addReview }) {
                     body: '',
                     rating: '',
                 }}
-                // To reset the form you need to pass an argument of actions.
-                // (values, actions)
+
                 onSubmit={(values,actions) => {
                     addReview(values)
-                    //Then you call actions with the resetForm function.
+
                     actions.resetForm();
                 }}
-                validationSchema={reviewSchema}  //when validation failed yup provides formik with some error messages and it attaches those to the props inside render function 
+                validationSchema={reviewSchema}  
             >
               
    
-                {(props) => (           //props provided by formik itself, and we can access to some props provided by formik , props like functions that handling change of form fields, access to current value and submittion handling
+                {(props) => (         
                     <View>
                         <TextInput
                             style={globalStyles.input}
                             placeholder="Review Title"
-                            onChangeText={props.handleChange('title')} //handle the state and update the value text below
+                            onChangeText={props.handleChange('title')} 
                             value={props.values.title}
-                            // onBlur gets called when you leave the input, we take advantage of this functionality for displaying the error msg when the user leaves the input & there's an error.
                             onBlur={props.handleBlur('title')}
                         />
-                        {/* props.touched.title && displays the error message only when you have touched the component & there is an error, instead of just showing the error right away. (Logical AND operator) */}
                         <Text style={globalStyles.error}>{props.touched.title && props.errors.title}</Text>
                         <TextInput
                             multiline
