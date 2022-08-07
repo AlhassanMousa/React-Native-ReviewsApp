@@ -23,4 +23,3 @@ export default function Navigator() {
     )
 }
 
-//container surround draw navigator
