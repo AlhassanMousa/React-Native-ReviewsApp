@@ -19,11 +19,11 @@ export default function Home({ navigation, route }) {
     ]);
 
     const addReview = (review) => {
-        review.key = Math.random().toString(); // not best way but for simplisty
+        review.key = Math.random().toString(); 
         setReviews((currentReviews) => {
             return [review, ...currentReviews]
         })
-        setModalOpen(false);  //hide modal after add review
+        setModalOpen(false);  
     }
     const deleteReview = (id) => {
         setReviews(() => {
@@ -32,15 +32,12 @@ export default function Home({ navigation, route }) {
     }
 
     useEffect(() => {
-        // Checks if route.params? has the parameter of reviewToDelete; if that's true, then proceed to get the title & the key of the review to delete it.
         if (route.params?.reviewToDelete) {
-            // Get the destructured values from the variables inside reviewToDelete Object.
             const { key: id, title } = route.params.reviewToDelete;
-            // Invoke deleteReview function & pass the id as an argument.
             deleteReview(id)
             Alert.alert('Information', `Review deleted succesfully:\n${title}`, [{ title: 'ok' }])
         }
-        // Re-runs useEffect if route.params has changed.
+   
     }, [route.params])
 
     return (
@@ -81,7 +78,7 @@ export default function Home({ navigation, route }) {
 
 const styles = StyleSheet.create({
     modalContent: {
-        flex: 1, //to take full width
+        flex: 1, 
     },
  
     modalToggle: {
@@ -100,10 +97,4 @@ const styles = StyleSheet.create({
 
 
 
-//  renderItem={({ item }) => (  //access to item by destructured here
-   //send data when we are navigating to another screen we use a second argument "object" this object should have different key value pairs in it 
- //  <TouchableOpacity onPress={() => (navigation.navigate('ReviewDetails', item))}>  {/*so we can press on each item */} {/*navigation take data or object as second parameter so we can access it */}
 
-
-
- // ...styles.modalToggle, ...styles.modalClose   destructuring all styles properties 
