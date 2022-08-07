@@ -33,4 +33,3 @@ export default function AboutStack() {
 
 
 
-//header:() => is a function
