@@ -59,4 +59,3 @@ const styles = StyleSheet.create({
     }
 })
 
-// use navigation object to open the drawer openDrawer
